@@ -6,11 +6,9 @@ import React from "react";
 
 const Home = () => {
   return (
-    <Box>
-      <Typography variant="h1">
-        <Perfume />
-        <Cart />
-      </Typography>
+    <Box sx={{ display: "flex" }}>
+      <Perfume />
+      <Cart />
     </Box>
   );
 };
