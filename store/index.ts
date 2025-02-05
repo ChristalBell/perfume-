@@ -6,7 +6,7 @@ interface PerfumeState {
   addToCart: (product: typeof perfume) => void;
 }
 
-const usePerfumeStore = create<PerfumeState>()((set) => ({
+export const usePerfumeStore = create<PerfumeState>()((set) => ({
   perfume: {
     title: "",
     size: "",
