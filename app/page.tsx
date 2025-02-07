@@ -6,9 +6,9 @@ import React from "react";
 
 const Home = () => {
   return (
-    <Box sx={{ display: "flex" }}>
-      <Perfume />
+    <Box>
       <Cart />
+      <Perfume />
     </Box>
   );
 };
