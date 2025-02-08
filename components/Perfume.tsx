@@ -68,7 +68,7 @@ const Perfume = () => {
           sx={{ display: "flex", padding: "1rem 0", alignItems: "center" }}
         >
           <Typography sx={{ color: COLORS.yellow, fontSize: "2rem" }}>
-            ${perfume.originalPrice}
+            ${perfume.salePrice}
           </Typography>
           <Typography
             sx={{
@@ -77,7 +77,7 @@ const Perfume = () => {
               textDecoration: "line-through",
             }}
           >
-            ${perfume.salePrice}
+            ${perfume.originalPrice}
           </Typography>
         </Box>
         <Button
@@ -89,7 +89,9 @@ const Perfume = () => {
           }}
           onClick={() => addToCart(perfume)}
         >
-          Smell Like Royalty
+          <Typography sx={{ fontWeight: "bold" }}>
+            Smell Like Royalty
+          </Typography>
         </Button>
       </Box>
     </Box>
