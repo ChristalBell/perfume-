@@ -15,10 +15,11 @@ const Cart = () => {
         backgroundColor: "white",
         width: "30rem",
         borderRadius: ".5rem ",
-        alignItems: "right",
-        transform: "translateX(40rem)",
+        position: "relative",
+        right: "-51rem",
         paddingTop: ".75rem",
         marginTop: "2rem",
+        overflow: "hidden",
       }}
     >
       <Typography

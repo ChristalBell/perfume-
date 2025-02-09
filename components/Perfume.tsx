@@ -7,17 +7,28 @@ import Typography from "@mui/material/Typography";
 import { perfume } from "@/data";
 import { usePerfumeStore } from "@/store";
 import { COLORS } from "@/styles/colors";
+import useMediaQuery from "@mui/material/useMediaQuery";
 const Perfume = () => {
   const addToCart = usePerfumeStore((state) => state.addToCart);
-
+  const mobile = useMediaQuery("(min-width:600px)");
   return (
-    <Box sx={{ display: "flex", padding: "12rem" }}>
-      <Image
+    <Box
+      sx={{
+        justifyContent: "center",
+        alignItems: "center",
+        paddingTop: "10vh",
+        display: "flex",
+        flexDirection: mobile ? "row" : "column",
+      }}
+    >
+      <img
         src="/princessvw.jpeg"
         alt="princess"
-        height={640}
-        width={432}
-        style={{ borderRadius: "1rem 0 0 1rem" }}
+        style={{
+          borderRadius: mobile ? "1rem 0 0 1rem" : "1rem",
+          width: mobile ? "30vw" : "50vw",
+          height: "58.5vh",
+        }}
       />
 
       <Box
@@ -25,10 +36,10 @@ const Perfume = () => {
         sx={{
           color: "white",
           backgroundColor: COLORS.purple,
-          height: "35rem",
-          width: "25rem",
-          padding: "2.5rem",
-          borderRadius: "0 1rem 1rem 0",
+          width: "30vw",
+          height: "50vh",
+          padding: "2.5rem ",
+          borderRadius: mobile ? "0 1rem 1rem 0" : "1rem",
         }}
       >
         <Typography
@@ -41,11 +52,20 @@ const Perfume = () => {
           Perfume
         </Typography>
         <Box className="details" sx={{ paddingBottom: ".75rem" }}>
-          <Typography variant="h3">{perfume.title}</Typography>
+          <Typography
+            sx={{ fontWeight: "bold", fontSize: mobile ? "2rem" : "1rem" }}
+          >
+            {perfume.title}
+          </Typography>
           <Typography sx={{ fontSize: ".5rem", paddingBottom: ".5rem" }}>
             {perfume.size}
           </Typography>
-          <Typography sx={{ fontSize: ".75rem", lineHeight: "1.25rem" }}>
+          <Typography
+            sx={{
+              fontSize: ".75rem",
+              lineHeight: mobile ? "1.25rem" : "1rem",
+            }}
+          >
             {perfume.description}
           </Typography>
         </Box>
@@ -84,7 +104,7 @@ const Perfume = () => {
           sx={{
             backgroundColor: COLORS.yellow,
             color: COLORS.purple,
-            width: "25rem",
+            width: "25vw",
             "&:hover": { color: " #fce1f9" },
           }}
           onClick={() => addToCart(perfume)}
