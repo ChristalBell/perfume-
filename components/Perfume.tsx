@@ -26,7 +26,7 @@ const Perfume = () => {
         alt="princess"
         style={{
           borderRadius: mobile ? "1rem 0 0 1rem" : "1rem",
-          width: mobile ? "30vw" : "50vw",
+          width: mobile ? "30vw" : "64vw",
           height: "58.5vh",
         }}
       />
@@ -36,8 +36,8 @@ const Perfume = () => {
         sx={{
           color: "white",
           backgroundColor: COLORS.purple,
-          width: "30vw",
-          height: "50vh",
+          width: mobile ? "30vw" : "50vw",
+          height: mobile ? "50vh" : "60vh",
           padding: "2.5rem ",
           borderRadius: mobile ? "0 1rem 1rem 0" : "1rem",
         }}

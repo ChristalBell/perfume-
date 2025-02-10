@@ -5,18 +5,20 @@ import { usePerfumeStore } from "@/store";
 import { Typography } from "@mui/material";
 import Image from "next/image";
 import { COLORS } from "@/styles/colors";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Cart = () => {
   const perfume = usePerfumeStore((state) => state.perfume);
   console.log(perfume);
+  const mobile = useMediaQuery("(min-width:600px)");
   return (
     <Box
       sx={{
         backgroundColor: "white",
-        width: "30rem",
+        width: mobile ? "30rem" : "20rem",
         borderRadius: ".5rem ",
         position: "relative",
-        right: "-51rem",
+        right: mobile ? "-51rem" : "-2rem",
         paddingTop: ".75rem",
         marginTop: "2rem",
         overflow: "hidden",
